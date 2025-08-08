@@ -1,0 +1,1 @@
+A cross-platform Python script that cleans the Downloads folder during a specified time window. It should work on both Windows and Linux by detecting the OS and adjusting the folder path accordingly
