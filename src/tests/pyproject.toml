@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dirclean"
+version = "1.0.0"
+description = "Safe-by-default UNIX directory cleanup CLI"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "AKL" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: MacOS"
+]
+dependencies = []  # stdlib only in v1.0
+
+[project.scripts]
+# after `pip install -e .`, you'll have `dirclean` on PATH
+dirclean = "main:main"
+
+[tool.setuptools]
+# include our package directory
+packages = ["ops"]
+
+[tool.setuptools.py-modules]
+# also include the top-level single-file module
+py-modules = ["main"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
